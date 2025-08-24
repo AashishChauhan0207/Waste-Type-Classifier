@@ -1,6 +1,25 @@
 # Waste Type Classifier
 
-A real-time waste classification system using computer vision and machine learning to identify and categorize different types of waste materials through camera input.
+A real-time waste classification system using computer vision and machine learning to identify and categorize different types of waste materials through camera input. The model is trained using Roboflow's computer vision platform.
+
+## Model Details
+
+- **Dataset**: 3500 images across different waste categories
+- **Model Type**: Single-Label Classification
+- **Training Platform**: Roboflow
+- **Model Performance**: Trained with validation accuracy reaching ~95%
+
+### Dataset Categories
+- Battery (Hazardous Waste)
+- Biological (Organic Waste)
+- Cardboard (Recyclable)
+- Clothes (Textile Waste)
+- Glass (Recyclable)
+- Metal (Recyclable)
+- Paper (Recyclable)
+- Plastic (Recyclable)
+- Shoes (Textile Waste)
+- Trash (General Waste)
 
 ## Features
 
@@ -28,9 +47,23 @@ A real-time waste classification system using computer vision and machine learni
 pip install -r requirements.txt
 ```
 
-3. Set up your Roboflow account and get your API key
-4. Replace the placeholder API key in the code with your actual Roboflow API key
-5. Update the project and model version according to your Roboflow setup
+3. Set up Roboflow integration:
+   - Create a free account at [Roboflow](https://roboflow.com)
+   - Get your API key from your Roboflow account settings
+   - Replace the placeholder API key in the code with your actual Roboflow API key
+   - Update the project name and model version in the code:
+     ```python
+     project = rf.workspace().project("your-project-name")
+     model = project.version("your_version_number").model
+     ```
+
+### Roboflow Model Access
+The project uses a trained model hosted on Roboflow. The model was trained on a custom dataset of 3,500 images with various waste types. To use this classifier:
+
+1. Create your Roboflow account
+2. Either:
+   - Use your own trained model by updating the project and version numbers
+   - Or request access to our pre-trained model by contacting us
 
 ## Usage
 
